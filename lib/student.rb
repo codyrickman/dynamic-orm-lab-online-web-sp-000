@@ -12,7 +12,7 @@ class Student < InteractiveRecord
     sql = <<-SQL
             PRAGMA table_info(?)
             SQL
-    DB[:conn].execute(sql, self.table_name)
+    puts DB[:conn].execute(sql, self.table_name)
   end
 
 end
