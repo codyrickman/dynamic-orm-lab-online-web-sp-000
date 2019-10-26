@@ -19,5 +19,5 @@ class Student < InteractiveRecord
       names << column[:name]
     end
   end
-
+  return names
 end
