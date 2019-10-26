@@ -12,7 +12,12 @@ class Student < InteractiveRecord
     sql = <<-SQL
             PRAGMA table_info(?)
             SQL
-    puts DB[:conn].execute(sql, self.table_name)
+    details = DB[:conn].execute(sql, self.table_name)
+    names = []
+
+    details.each do |column|
+      names << column[:name]
+    end
   end
 
 end
